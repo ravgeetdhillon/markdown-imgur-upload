@@ -21,7 +21,8 @@ def parse_url(url):
 
     is_url = False
     is_absolute = False
-    scheme, netloc, path = urlparse(html.unescape(url))
+    scheme, netloc, path, params, query, fragment = urlparse(
+        html.unescape(url))
 
     if RE_URL.match(scheme):
         # Clearly a URL
